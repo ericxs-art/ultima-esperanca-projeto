@@ -1,0 +1,22 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Gregory",
+      "email": "gregory@gmail.com",
+      "senha": "7"
+    },
+    {
+      "id": 7,
+      "nome": "Cristiano Ronaldo",
+      "email": "cr7@gmail.com",
+      "senha": "7"
+    },
+    {
+      "id": 2,
+      "nome": "Vegetta",
+      "email": "vegetta@gmail.com",
+      "senha": "kakaroto"
+    }
+  ]
+}
