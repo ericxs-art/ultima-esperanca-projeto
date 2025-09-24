@@ -77,7 +77,10 @@ module.exports = {
 
     // Se não achar, avisa que deu erro
     if (!usuarioAtualizado) {
-      return res.status(404).json({ mensagem: "Usuário não encontrado" });
+      return res.status(404).json({
+        usuarioAtualizado: usuarioAtualizado,
+        mensagem: "Usuário não encontrado",
+      });
     }
     // se atualizar, manda uma mensagem dizendo que deu certo
     res.json({ mensagem: "Usuário foi atualizado" });
@@ -94,6 +97,6 @@ module.exports = {
       return res.status(404).json({ mensagem: "Usuário não encontrado" });
     }
     // se atualizar, manda uma mensagem dizendo que deu certo
-    res.json({ mensagem: "Usuário foi deletado" });
+    res.json({ deletado: deletado, mensagem: "Usuário foi deletado" });
   },
 };
