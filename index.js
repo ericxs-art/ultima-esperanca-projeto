@@ -26,18 +26,19 @@ app.set("views", path.join(__dirname, "views"))
 
 //Rota de página inicial
 app.get("/home", (req,res) => {
-    res.status(200).render("index")
+    res.status(200).render("index", { titulo: "Página inicial"})
 } )
-
-//Rota pra quando tentar acessar uma rota que não existe
-app.use((req,res) => {
-    res.status(404).render("404")
-})
 
 //Rota inicial do projeto
 app.get("/", (req,res) => { 
-    res.status(200).send("Olá, parabéns conseguiu")
+    res.status(200).render("index", { titulo: "Página inicial"})
  })
+
+//Rota pra quando tentar acessar uma rota que não existe
+app.use((req,res) => {
+    res.status(404).render("404", { titulo: "Página de erro"})
+})
+
 
 // Subir o servidor 
 app.listen(port, () => {
