@@ -8,7 +8,7 @@ module.exports = {
   // LOGIN
   // REsponde a requisição mostrando a visualização da tela de login
   formLogin: (req, res) => {
-    res.render("login");
+    res.render("login", { titulo: "Login"});
   },
 
   // Função para levar os dados preenchidos para o model realizar o login
