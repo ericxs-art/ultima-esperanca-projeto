@@ -32,7 +32,7 @@ module.exports = {
   // C
   // Responde a requisição mostrando a visualização da tela de cadastro
   formCadastro: (req, res) => {
-    res.render("cadastro");
+    res.render("usuarios/cadastroUsuarios", {titulo: "Cadastro"});
   },
 
   // Função para levar os dados preenchidos para o model realizar o cadastro
