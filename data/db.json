@@ -18,5 +18,32 @@
       "email": "vegetta@gmail.com",
       "senha": "kakaroto"
     }
+  ],
+   "Produtos": [
+    {
+      "id": 7,
+      "nome": "Jabulani",
+      "descricao": "Bola para jogar futebol",
+      "preco": 300,
+      "quantidade": 2010,
+      "categoria": "Esportes"
+    },
+    {
+      "id": 20,
+      "nome": "Skate",
+      "descricao": "Serve para andar em pistas de skate ou aonde você quiser.",
+      "preco": 250,
+      "quantidade": 50,
+      "categoria": "Transportes"
+    },
+    {
+      "id": 10,
+      "nome": "Manto do Flamengo",
+      "descricao": "A roupa de gala mais elegante",
+      "preco": 1981,
+      "quantidade": 45,
+      "categoria": "Roupa de gala"
+    }
   ]
 }
+
