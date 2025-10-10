@@ -8,7 +8,7 @@ module.exports = {
   // LOGIN
   // REsponde a requisição mostrando a visualização da tela de login
   formLogin: (req, res) => {
-    res.render("login", { titulo: "Login"});
+    res.render("login", { titulo: "Login" });
   },
 
   // Função para levar os dados preenchidos para o model realizar o login
@@ -32,18 +32,18 @@ module.exports = {
   // C
   // Responde a requisição mostrando a visualização da tela de cadastro
   formCadastro: (req, res) => {
-    res.render("usuarios/cadastroUsuarios", {titulo: "Cadastro"});
+    res.render("usuarios/cadastroUsuarios", { titulo: "Cadastro" });
   },
 
   // Função para levar os dados preenchidos para o model realizar o cadastro
   salvarUsuario: (req, res) => {
     const { usuario, email, senha, tipo } = req.body;
     usuarioNovo = userModel.salvar({ usuario, email, senha, tipo });
-    res.render("usuarios/confirmacaoUsuarios",{
-    tipo : "cadastro",
-    titulo : "cadastro confirmado",
-    usuarioNovo
-  });
+    res.render("usuarios/confirmacaoUsuarios", {
+      tipo: "cadastro",
+      titulo: "cadastro confirmado",
+      usuarioNovo
+    });
   },
 
   // R

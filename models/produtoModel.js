@@ -3,7 +3,7 @@ const db = require("../data/db.json")
 let listaProdutos = db.Produtos
 
 module.exports = {
-    salvar: ({ id, nome, descricao, preco, quantidade,categoria }) => {
+    salvar: ({ id, nome, descricao, preco, quantidade,categoria, url }) => {
     const novoProduto = {
       id: listaProdutos.length + 1,
       id,
@@ -11,6 +11,7 @@ module.exports = {
       descricao,
       preco,
       quantidade,
+      url,
       categoria
     };
     listaProdutos.push(novoProduto);
@@ -23,7 +24,7 @@ module.exports = {
    buscarPorId: (id) => {
     return listaProdutos.find((user) => user.id == id || null);
   },
-  atualizar: (id, { nome, descricao,preco,quantidade,categoria }) => {
+  atualizar: (id, { nome, descricao,preco,quantidade,categoria, url }) => {
     const index = listaProdutos.findIndex((user) => user.id == id);
     if (index === -1) return null;
     listaProdutos[index] = {
@@ -33,7 +34,8 @@ module.exports = {
       listaProdutos: descricao || listaProdutos[index].descricao,
       listaProdutos: preco || listaProdutos[index].preco,
       listaProdutos: quantidade || listaProdutos[index].quantidade,
-      listaProdutos: categoria || listaProdutos[index].categoria
+      listaProdutos: categoria || listaProdutos[index].categoria,
+      listaProdutos: url || listaProdutos[index].url
     };
     return listaProdutos[index];
   },

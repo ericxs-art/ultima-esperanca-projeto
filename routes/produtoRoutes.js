@@ -6,7 +6,7 @@ const produtoController = require("../controllers/produtoController")
 
 products.get("/cadastrar", produtoController.formCadastro)
 
-products.post("/", produtoController.salvarProduto)
+products.post("/cadastrar", produtoController.salvarProduto)
 
 products.get("/", produtoController.listarProdutos)
 
