@@ -30,7 +30,7 @@
       "preco": 300,
       "quantidade": 2010,
       "categoria": "Esportes",
-      "link": "https://imagem"
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlRPCBWZkUZ5SJ1hw5R3_98gQL69vJJ0gMRg&s"
     },
     {
       "id": 20,
@@ -39,7 +39,7 @@
       "preco": 250,
       "quantidade": 50,
       "categoria": "Transportes",
-      "link":  "https://imagem"
+      "url":  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1UegruB1BQnwaghsMid5Hb2WO20TtQT_c9w&s"
     },
     {
       "id": 10,
@@ -48,7 +48,7 @@
       "preco": 1981,
       "quantidade": 45,
       "categoria": "Roupa de gala",
-      "link":  "https://imagem"
+      "url":  "https://flamengo.vtexassets.com/arquivos/ids/179948/Imagem_do_WhatsApp_de_2025-08-18_a_s__09.05.57_5bb3b5cb-removebg-preview.png?v=638912867321530000"
     },
     {
       "id": 8,
@@ -57,7 +57,7 @@
       "preco": 450,
       "quantidade": 150,
       "categoria": "Esportes",
-      "link": "https://imagem"
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGEWzQhaFBVxgaktQ6dCb3VDTmulSyNatySg&s"
     },
     {
       "id": 9,
@@ -66,7 +66,7 @@
       "preco": 220,
       "quantidade": 320,
       "categoria": "Esportes",
-      "link":  "https://imagem"
+      "url":  "https://dor03phawg286.cloudfront.net/Custom/Content/Products/10/50/1050254_capacete-mt-thunder-4-sv-drax-b7-azul_m3_638346179163125690.webp"
     },
     {
       "id": 10,
@@ -75,7 +75,7 @@
       "preco": 280,
       "quantidade": 500,
       "categoria": "Esportes",
-      "link":  "https://imagem"
+      "url":  "https://acdn-us.mitiendanube.com/stores/002/066/468/products/351-3b8ea42cae09a93ad716622503622343-640-0.jpg"
     },
     {
       "id": 11,
@@ -84,7 +84,7 @@
       "preco": 180,
       "quantidade": 200,
       "categoria": "Esportes",
-      "link":  "https://imagem"
+      "url":  "https://m.media-amazon.com/images/I/61UJ7uC76UL._UF1000,1000_QL80_.jpg"
     },
     {
       "id": 12,
@@ -93,7 +93,7 @@
       "preco": 350,
       "quantidade": 120,
       "categoria": "Esportes",
-      "link":  "https://imagem"
+      "url":  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShit7hj9JrP9zbH8yaUQvQpaXymf2ax5-4Tg&s"
     },
     {
       "id": 13,
@@ -102,7 +102,7 @@
       "preco": 210,
       "quantidade": 300,
       "categoria": "Esportes",
-      "link":  "https://imagem"
+      "url":  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIXb4Lzqe9e8nmGOXaUUJrBFAvEytwweuXSA&s"
     },
     {
       "id": 14,
@@ -111,7 +111,7 @@
       "preco": 190,
       "quantidade": 100,
       "categoria": "Esportes",
-      "link":  "https://imagem"
+      "url":  "https://cdn.awsli.com.br/2500x2500/150/150968/produto/12278310/8e8c001217.jpg"
     }
   ]
 }
