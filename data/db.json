@@ -5,31 +5,32 @@
       "usuario": "Gregory",
       "email": "gregory@gmail.com",
       "senha": "7",
-    "tipo" : "Administrador"
+      "tipo": "Administrador"
     },
     {
       "id": 7,
       "usuario": "Cristiano Ronaldo",
       "email": "cr7@gmail.com",
       "senha": "7",
-      "tipo" : "Gerente"
+      "tipo": "Gerente"
     },
     {
       "id": 2,
       "usuario": "Vegetta",
       "email": "vegetta@gmail.com",
       "senha": "kakaroto",
-      "tipo" : "Funcionario"
+      "tipo": "Funcionario"
     }
   ],
-   "Produtos": [
+  "Produtos": [
     {
       "id": 7,
       "nome": "Jabulani",
       "descricao": "Bola para jogar futebol",
       "preco": 300,
       "quantidade": 2010,
-      "categoria": "Esportes"
+      "categoria": "Esportes",
+      "link": "https://imagem"
     },
     {
       "id": 20,
@@ -37,7 +38,8 @@
       "descricao": "Serve para andar em pistas de skate ou aonde você quiser.",
       "preco": 250,
       "quantidade": 50,
-      "categoria": "Transportes"
+      "categoria": "Transportes",
+      "link":  "https://imagem"
     },
     {
       "id": 10,
@@ -45,8 +47,71 @@
       "descricao": "A roupa de gala mais elegante",
       "preco": 1981,
       "quantidade": 45,
-      "categoria": "Roupa de gala"
+      "categoria": "Roupa de gala",
+      "link":  "https://imagem"
+    },
+    {
+      "id": 8,
+      "nome": "Raquete Pro Strike",
+      "descricao": "Raquete profissional para tênis",
+      "preco": 450,
+      "quantidade": 150,
+      "categoria": "Esportes",
+      "link": "https://imagem"
+    },
+    {
+      "id": 9,
+      "nome": "Capacete Thunder",
+      "descricao": "Capacete de ciclismo com proteção reforçada",
+      "preco": 220,
+      "quantidade": 320,
+      "categoria": "Esportes",
+      "link":  "https://imagem"
+    },
+    {
+      "id": 10,
+      "nome": "Camisa Oficial Brasil 2022",
+      "descricao": "Camisa de futebol oficial da seleção brasileira",
+      "preco": 280,
+      "quantidade": 500,
+      "categoria": "Esportes",
+      "link":  "https://imagem"
+    },
+    {
+      "id": 11,
+      "nome": "Luvas de Boxe Impact",
+      "descricao": "Luvas acolchoadas para treino e competição",
+      "preco": 180,
+      "quantidade": 200,
+      "categoria": "Esportes",
+      "link":  "https://imagem"
+    },
+    {
+      "id": 12,
+      "nome": "Skate Street Pro",
+      "descricao": "Skate profissional para manobras urbanas",
+      "preco": 350,
+      "quantidade": 120,
+      "categoria": "Esportes",
+      "link":  "https://imagem"
+    },
+    {
+      "id": 13,
+      "nome": "Bola de Basquete NBA",
+      "descricao": "Bola oficial para jogos de basquete",
+      "preco": 210,
+      "quantidade": 300,
+      "categoria": "Esportes",
+      "link":  "https://imagem"
+    },
+    {
+      "id": 14,
+      "nome": "Rede de Vôlei Outdoor",
+      "descricao": "Rede resistente para jogos ao ar livre",
+      "preco": 190,
+      "quantidade": 100,
+      "categoria": "Esportes",
+      "link":  "https://imagem"
     }
   ]
 }
-

@@ -17,7 +17,8 @@ module.exports = {
     },
     listarProdutos: (req, res) => {
         const produtos = produtoModel.listarTodos();
-        res.json(produtos);
+        res.render("produtos/listarProdutos",
+         { produtos, titulo: "Lista de produtos" });
     },
     buscarProduto: (req, res) => {
         const id = req.params.id;
