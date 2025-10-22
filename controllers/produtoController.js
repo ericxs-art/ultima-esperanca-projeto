@@ -18,27 +18,46 @@ module.exports = {
     listarProdutos: (req, res) => {
         const produtos = produtoModel.listarTodos();
         res.render("produtos/listarProdutos",
-         { produtos, titulo: "Lista de produtos" });
+            { produtos, titulo: "Lista de produtos" });
     },
     buscarProduto: (req, res) => {
         const id = req.params.id;
         const produto = produtoModel.buscarPorId(id);
         if (!produto) {
-            return res.status(404).json({ mensagem: "Produto não encontrado" });
+            return res.status(404).render("produtos/erroProdutos", {
+                titulo:"erro",
+                mensagem:"Usuario não encontrado"
+            });
         }
-        res.json(produto);
+        res.render("produtos/editarProdutos", {
+            titulo: "editar",
+            produto
+
+        });
     },
     atualizarProduto: (req, res) => {
         const id = req.params.id;
-        const { nome, descricao } = req.body;
+        const { nome, descricao, preco, quantidade, categoria, url } = req.body;
         const produtoAtualizado = produtoModel.atualizar(id, {
             nome,
             descricao,
+            preco,
+            quantidade,
+            categoria,
+            url
         });
         if (!produtoAtualizado) {
-            return res.status(404).json({ mensagem: "Produto não encontrado" });
+            return res.status(404).render("produtos/erroProdutos", {
+                titulo: "erro",
+                mensagem: "Não foi possivel atualizar o produto"
+
+            })
         }
-        res.json({ mensagem: "Produto foi atualizado" });
+        res.render("produtos/produtoConfirmado", {
+            titulo: "edição confirmada",
+            tipo: "edicao",
+            produtoAtualizado
+        })
     },
     deletarProduto: (req, res) => {
         const id = req.params.id;
