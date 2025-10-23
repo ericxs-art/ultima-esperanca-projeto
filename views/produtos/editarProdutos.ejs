@@ -1,17 +1,17 @@
 <%- include('../partials/header') %>
 
-    <main class="container d-flex flex-column flex-fill justify-content-center">
+    <main class="container d-flex flex-column flex-fill justify-content-around">
         <h1 class="text-center"> EDITAMENTO DE PRODUTOS </h1>
         <form action="/produtos/<%= produto.id %>" method="post">
             <div class="mb-3">
 
                 <label for="inputName" class="form-label fs-2 mt-2">Nome do produto</label>
                 <input type="text" id="inputName" class="form-control form-control-lg"
-                    placeholder="Digite o nome do produto" name="nome" required value=<%= produto.nome%>>
+                    placeholder="Digite o nome do produto" name="nome" required value= "<%= produto.nome %>">
 
                 <label for="inputDesc" class="form-label fs-2 mt-2">Descrição</label>
                 <input type="text" id="inputDesc" class="form-control form-control-lg"
-                    placeholder="Digite uma descrição" name="descricao" required value=<%= produto.descricao%>>
+                    placeholder="Digite uma descrição" name="descricao" required value= "<%= produto.descricao %>">
 
 
                 <div class="row g-2">
@@ -40,11 +40,11 @@
                         </div>
                         <div class="col-md-6">
                             <img id="previewImagem" class="d-flex mx-auto mt-3"
-                                src="https://soledade.rs.gov.br/admin/globalarq/noticia/noticia/651_366/semImagem.jpg"
+                                src="<%= produto.url %>"
                                 alt="" height="200px" width="300px">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-lg btn-primary">Editar</button>
+                    <button type="submit" class="btn btn-lg btn-secondary">Editar</button>
 
         </form>
         <script>
@@ -52,7 +52,7 @@
 
             const previewimagem = document.getElementById("previewImagem")
 
-            const imagempadrao = "https://soledade.rs.gov.br/admin/globalarq/noticia/noticia/651_366/semImagem.jpg"
+            const imagempadrao = "https://soledade.r.br/admin/globalarq/noticia/noticia/651_366/semImagem.jpg"
 
             inputImagem.addEventListener("input", () => {
                 const url = inputImagem.value

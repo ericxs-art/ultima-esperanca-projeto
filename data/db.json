@@ -42,15 +42,6 @@
       "url":  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1UegruB1BQnwaghsMid5Hb2WO20TtQT_c9w&s"
     },
     {
-      "id": 10,
-      "nome": "Manto do Flamengo",
-      "descricao": "A roupa de gala mais elegante",
-      "preco": 1981,
-      "quantidade": 45,
-      "categoria": "Roupa de gala",
-      "url":  "https://flamengo.vtexassets.com/arquivos/ids/179948/Imagem_do_WhatsApp_de_2025-08-18_a_s__09.05.57_5bb3b5cb-removebg-preview.png?v=638912867321530000"
-    },
-    {
       "id": 8,
       "nome": "Raquete Pro Strike",
       "descricao": "Raquete profissional para tênis",

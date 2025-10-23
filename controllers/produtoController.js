@@ -32,7 +32,6 @@ module.exports = {
         res.render("produtos/editarProdutos", {
             titulo: "editar",
             produto
-
         });
     },
     atualizarProduto: (req, res) => {
@@ -50,7 +49,6 @@ module.exports = {
             return res.status(404).render("produtos/erroProdutos", {
                 titulo: "erro",
                 mensagem: "Não foi possivel atualizar o produto"
-
             })
         }
         res.render("produtos/produtoConfirmado", {

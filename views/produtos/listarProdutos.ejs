@@ -3,24 +3,24 @@
     <main class="container text-center mt-3">
         <h1>LISTA DE PRODUTOS </h1>
         <a href="/produtos/cadastrar">
-            <button class="btn btn-lg btn-primary">
+            <button class="btn btn-lg btn-warning">
                 <i class="bi bi-brightness-high-fill"></i>
                 Cadastrar
             </button>
         </a>
-        <div class="d-flex flex-wrap flex-row gap-3 ">
+        <div class="d-flex flex-wrap flex-row gap-3 justify-content-around">
         <% if (produtos && produtos.length> 0) { %>
             <% produtos.forEach((produto) => { %>
                 <div class="card" style="width: 18rem;">
-            <img src="<%= produto.url %>" class="card-img-top" alt="...">
+            <img style="height: 230px;" src="<%= produto.url %>" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">
                     <%= produto.nome %>
                 </h5>
-                <p class="card-text"> <strong>Descrição </strong><%= produto.descricao %></p>
-                <p class="card-text"> <strong>tipo </strong><%= produto.categoria %></p>
-                <p class="card-text"> <strong>preço </strong><%= produto.preco %></p>
-                <p class="card-text"> <strong>Quantidade </strong><%= produto.quantidade %></p>
+                <p class="card-text"> <strong>Descrição</strong><%= produto.descricao %></p>
+                <p class="card-text"> <strong>tipo</strong><%= produto.categoria %></p>
+                <p class="card-text"> <strong>preço</strong><%= produto.preco %></p>
+                <p class="card-text"> <strong>Quantidade</strong><%= produto.quantidade %></p>
          
                                 <a href="/produtos/<%= produto.id %>" style="text-decoration: none;">
                                     <button class="btn btn-sm btn-warning me-2">
