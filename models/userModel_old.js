@@ -5,8 +5,6 @@ const db = require("../data/db.json");
 let listaUsuarios = db.usuarios;
 
 //area nova conexao com o banco de dados
-//variavel que importa a conexão com o banco
-const conn = require("../config/conexao-banco.js");
 
 module.exports = {
   // LOGIN
