@@ -9,63 +9,63 @@ let listaUsuarios = db.usuarios;
 const conn = require("../config/conexao-banco.js");
 
 module.exports = {
-  // LOGIN
-  // Função para válidar o login
-  login: (usuario, senha) => {
-    // Busca na lista de usuários,se tem aquele usuário com as informações que ele me passou
-    let logado =
-      listaUsuarios.find(
-        (user) => user.email == usuario && user.senha == senha
-      ) || null;
-    return logado;
+ 
+  login: (usuario, senha, callback) => {
+    // busca na lista usuarios, se tem aquele usuario com info mesmo
+
+    //variavel que guarda a consulta sql
+    const sql = `SELECT * FROM usuarios 
+                WHERE email = ?
+                AND senha =?`
+//valores para consulta sql
+                const valores = [ email, senha]
+
+                conn.query(sql,valores, () =>{
+
+if (erro){
+  return callback(erro,null)
+}
+// deu certo
+callback(null, resultados[0] || (null))
+                })
   },
 
   //CRUD
   // Função para cadastrar um novo usuario
-  salvar: ({ usuario, email, senha,tipo }) => {
-    const novoUsuario = {
-      id: listaUsuarios.length + 1,
-      usuario,
-      email,
-      senha,
-      tipo
-    };
-    listaUsuarios.push(novoUsuario);
-    console.log("Novo usuário salvo:", novoUsuario);
-    return novoUsuario;
+  salvar: ({ usuario, email, senha, tipo }, callback) => {
+    //variavel que guarda a consulta sql
+    const sql = `INSERT INTO usuarios (usuario,email,senha,tipo)
+    VALUES(?,?,?,?)
+    `
+
+    //VALORES PARA CONSULTA SQL
+    const valores = [usuario,email,senha,tipo]
+//função pra executar o sql,fazendo a requisição pro banco
+    conn.query(sql,valores,(erro,resultados) =>{
+      if(erro){
+        return callback(erro,null)
+      }
+      //variavel que armazena as informações que foram adicionados
+      const novoUsuario = {id:resultados.insertId,usuario,email,senha,tipo}
+//função que retorna pra controller
+      callback(null, novoUsuario)
+    })
   },
   // Busca todos os usuários do banco
   listarTodos: () => {
-    return listaUsuarios;
+   
   },
   // Busca um usuário específico do banco
   buscarPorId: (id) => {
-    return listaUsuarios.find((user) => user.id == id || null);
+  
   },
 
   atualizar: (id, { usuario, email, senha, tipo }) => {
-    // Busca na lista de usuários, um usuário com aquele id específico, se achar, pega o index dele e guarda na variávl index
-    const index = listaUsuarios.findIndex((user) => user.id == id);
-    // Se não achar, significa que um usuário com aquele index não existe
-    if (index === -1) return null;
-    // Se achar um usuário, substitui as informações que estavam nele, pelas novas enviadas
-    listaUsuarios[index] = {
-      ...listaUsuarios[index],
-      usuario: usuario || listaUsuarios[index].usuario,
-      email: email || listaUsuarios[index].email,
-      senha: senha || listaUsuarios[index].senha,
-      tipo: tipo || listaUsuarios[index].tipo
-    };
-    // Retorna o usuário atualizado
-    return listaUsuarios[index];
+  
+   
+  
   },
   deletar: (id) => {
-    // Busca na lista de usuários, um usuário com aquele id específico, se achar, pega o index dele e guarda na variávl index
-    const index = listaUsuarios.findIndex((user) => user.id == id);
-    // Se não achar, significa que um usuário com aquele index não existe
-    if (index === -1) return false;
-    // Atualiza o array com os usuários, agora com o usuário já retirado
-    const usuarioRemovido = listaUsuarios.splice(index, 1);
-    return usuarioRemovido;
+    
   },
 };
