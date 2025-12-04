@@ -1,71 +1,85 @@
-// Importar o json para servir como banco de dados
-const db = require("../data/db.json");
+//importa a conexão com o banco de dados
+const conn =  require("../config/conexao-banco.js")
 
-// Variável pra armazenar os usuários vindos do db
-let listaUsuarios = db.usuarios;
+module.exports ={
+//login
+login : (email,senha,callback) => {
+//guarda o sql
+const sql = `
+SELECT * FROM usuarios
+WHERE email = ? 
+AND senha = ?
+`
+// oq sera utilizado na consulta
+const valores = [email, senha]
 
-//area nova conexao com o banco de dados
-//variavel que importa a conexão com o banco
-const conn = require("../config/conexao-banco.js");
+//executa funcao
+conn.query(sql,valores,(erro,resultados) => {
+  //erro
+  if(erro){
+    return callback(erro,null)
+  }
+  // retorna para o controller (resulatdo)
+  callback(null, resultados[0] || null)
+})
+},
 
-module.exports = {
- 
-  login: (usuario, senha, callback) => {
-    // busca na lista usuarios, se tem aquele usuario com info mesmo
+// C = CREATE
+salvar : ({usuario,email,senha,tipo},callback) => {
+//sql com a info desejada
+const sql = `
+INSERT INTO usuarios (usuarios,email,senha,tipo)
+VALUES (?, ?, ?, ?)
+`
+//valores q vai usar na consultar
+const valores = [usuario, email, senha, tipo]
 
-    //variavel que guarda a consulta sql
-    const sql = `SELECT * FROM usuarios 
-                WHERE email = ?
-                AND senha =?`
-//valores para consulta sql
-                const valores = [ email, senha]
-
-                conn.query(sql,valores, () =>{
-
-if (erro){
-  return callback(erro,null)
+//executar o comando no banco
+conn.query(sql,valores, (erro,resultado) => {
+//lidar com erro
+if(erro){
+  return callback(erro, null)
 }
-// deu certo
-callback(null, resultados[0] || (null))
-                })
-  },
+const novoUsuario = {id: resultado.insertId, usuario, email, senha, tipo}
 
-  //CRUD
-  // Função para cadastrar um novo usuario
-  salvar: ({ usuario, email, senha, tipo }, callback) => {
-    //variavel que guarda a consulta sql
-    const sql = `INSERT INTO usuarios (usuario,email,senha,tipo)
-    VALUES(?,?,?,?)
-    `
+callback(null, novoUsuario)
+})
+},
+//R = Read
+listarTodos: (callback) => {
+//guarda o sql
+const sql = `SELECT * FROM usuarios`
 
-    //VALORES PARA CONSULTA SQL
-    const valores = [usuario,email,senha,tipo]
-//função pra executar o sql,fazendo a requisição pro banco
-    conn.query(sql,valores,(erro,resultados) =>{
-      if(erro){
-        return callback(erro,null)
-      }
-      //variavel que armazena as informações que foram adicionados
-      const novoUsuario = {id:resultados.insertId,usuario,email,senha,tipo}
-//função que retorna pra controller
-      callback(null, novoUsuario)
-    })
-  },
-  // Busca todos os usuários do banco
-  listarTodos: () => {
-   
-  },
-  // Busca um usuário específico do banco
-  buscarPorId: (id) => {
-  
-  },
+//executar o comando no banco
+conn.query(sql, (erro, resultados) => {
+if(erro){
+  return callback(erro, null)
+}
+callback(null, resultados)
+})
+},
+//U = Atualizar
+//Buscar usuario
+buscarPorId: () => {
 
-  atualizar: (id, { usuario, email, senha, tipo }) => {
-  
-   
-  
-  },
-  deletar: (id) => {
-    
-  },
-};
+},
+//Atualizar as info
+atualizar : () => {
+
+},
+//D = deletar
+deletar: (id, callback) => {
+//guarda a info
+const sql = `DELETE FROM usuarios
+WHERE id = ?`
+//variavell com a info oculta
+const valor = [id]
+//executar o comando no banco
+conn.query(sql,valor,(erro, resultado) => {
+ if(erro){
+    return callback(erro, null)
+  }
+  callback(null, resultado.affectedRows > 0)
+})
+}
+}
