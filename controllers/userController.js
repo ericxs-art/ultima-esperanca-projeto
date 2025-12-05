@@ -40,7 +40,7 @@ module.exports = {
 //C = CRIAR
 formCadastro: (req,res) => {
 //renderiza a pagina de cadasrto
-res.render("usuarios/cadastro", {titulo:"Cadastro"})
+res.render("usuarios/cadastroUsuarios", {titulo:"Cadastro"})
 },
 salvarUsuario: (req,res) => {
 //criar um objeto com a info da view
@@ -55,7 +55,7 @@ if(erro){
   })
 }
 //se deu certo
-res.render("usuarios/confirmacao",{
+res.render("usuarios/confirmacaoUsuarios",{
   titulo:"Cadastro confirmado",
   tipo: "cadastro",
   usuarioNovo

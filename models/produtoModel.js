@@ -86,3 +86,6 @@ conn.query(sql,valor,(erro, resultado) => {
 })
 }
 }
+
+
+
