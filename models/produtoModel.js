@@ -40,12 +40,35 @@ callback(null, resultados)
 },
 //U = Atualizar
 //Buscar usuario
-buscarPorId: () => {
-
+buscarPorId: (id, callback) => {
+  //guarda a info
+  const sql = `SELECT * FROM produtos
+  WHERE id = ?`
+//info oculta
+const valor = [id]
+  //executar o comando no banco
+  conn.query(sql, valor, (erro,resultados) => {
+if(erro){
+  return callback(erro,null)
+}
+callback(null, resultados[0] || null)
+  })
 },
 //Atualizar as info
-atualizar : () => {
-
+atualizar : (id, {nome, descricao, preco, quantidade, categoria, url},callback) => {
+//guarda a info
+const sql = `UPDATE produtos
+SET nome = ?, descricao = ?, preco = ?, quantidade = ?, categoria = ?, url = ?
+WHERE id = ? `
+// guarda a info oculta
+const valores = [nome, descricao, preco, quantidade, categoria, url,id]
+//EXERCUTAR O COMANDO 
+conn.query(sql,valores, (erro,callback) => {
+  if(erro){
+    return callback(erro,null)
+  }
+  callback(null,resultado.affectedRows > 0);
+});
 },
 //D = deletar
 deletar: (id, callback) => {
