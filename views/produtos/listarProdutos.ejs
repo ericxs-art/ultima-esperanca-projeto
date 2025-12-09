@@ -46,7 +46,7 @@
                 </div>
                 <% } %>
                  <script>
-                        function confirmaExclusao(nomeProduto, id) {
+                        function confirmaExclusao(id, nomeProduto) {
                             if (confirm(`Deseja realmente excluir o Produto ${nomeProduto}`)){
                                 window.location.href = ` /produtos/deletar/${id}`
                             }

@@ -82,12 +82,16 @@ SET usuario = ?, email = ?, senha = ?, tipo = ?
 WHERE id = ? `
 // guarda a info oculta
 const valores = [usuario,email,senha,tipo,id]
+// criar um objeto para retorna o usuario
+const atualizado = {
+  usuario:valores[0]
+}
 //EXERCUTAR O COMANDO 
-conn.query(sql,valores, (erro,callback) => {
+conn.query(sql,valores, (erro,resultado) => {
   if(erro){
     return callback(erro,null);
   }
-  callback(null,resultado.affectedRows > 0);
+  callback(null,atualizado);
 });
 },
 //D = deletar
@@ -103,6 +107,6 @@ conn.query(sql,valor,(erro, resultado) => {
     return callback(erro, null)
   }
   callback(null, resultado.affectedRows > 0)
-})
+});
 }
 }

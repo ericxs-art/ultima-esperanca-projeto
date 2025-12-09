@@ -14,6 +14,6 @@ products.get("/:id", produtoController.buscarProduto)
 
 products.post("/:id", produtoController.atualizarProduto)
 
-products.get("/:id", produtoController.deletarProduto)
+products.get("/deletar/:id", produtoController.deletarProduto)
 
 module.exports = products

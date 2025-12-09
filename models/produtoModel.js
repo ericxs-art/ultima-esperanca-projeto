@@ -62,12 +62,13 @@ SET nome = ?, descricao = ?, preco = ?, quantidade = ?, categoria = ?, url = ?
 WHERE id = ? `
 // guarda a info oculta
 const valores = [nome, descricao, preco, quantidade, categoria, url,id]
+const  atualizado = { produto:valores[0]}
 //EXERCUTAR O COMANDO 
-conn.query(sql,valores, (erro,callback) => {
+conn.query(sql,valores, (erro,resultado) => {
   if(erro){
     return callback(erro,null)
   }
-  callback(null,resultado.affectedRows > 0);
+  callback(null,atualizado);
 });
 },
 //D = deletar
