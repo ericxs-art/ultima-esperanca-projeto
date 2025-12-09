@@ -1,5 +1,5 @@
 //importa a conexão com o banco de dados
-const conn =  require("../config/conexao-banco.js")
+const conn = require("../config/conexao-banco.js")
 
 module.exports ={
 //login
@@ -28,7 +28,7 @@ conn.query(sql,valores,(erro,resultados) => {
 salvar : ({usuario,email,senha,tipo},callback) => {
 //sql com a info desejada
 const sql = `
-INSERT INTO usuarios (usuarios,email,senha,tipo)
+INSERT INTO usuarios (usuario,email,senha,tipo)
 VALUES (?, ?, ?, ?)
 `
 //valores q vai usar na consultar

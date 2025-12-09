@@ -28,7 +28,7 @@ select * from usuarios;
 select * from produtos;
 -- insert de usuarios
 insert into usuarios(id, usuario,email,senha,tipo)
-values (default,"Erick","delriogmail@com.br","27","Administrador"),
+values (default,'Erick','delriogmail@com.br','27','Administrador'),
 (default,'Ana Silva','ana.silva@mail.com','senha123','cliente'),
 (default,'Bruno Costa','bruno.costa@mail.com','bruno2025','cliente'),
 (default,'Carla Souza','carla.souza@mail.com','carla@123','cliente'),

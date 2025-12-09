@@ -21,7 +21,7 @@ module.exports = {
         res.render("produtos/produtoConfirmado", {
           titulo: "Cadastro confirmado",
           tipo: "cadastro",
-          produtoNovo,
+          produtoNovo
         });
       }
     );

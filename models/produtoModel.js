@@ -5,24 +5,24 @@ module.exports ={
 
 
 // C = CREATE
-salvar : ({id, nome, descricao, preco, quantidade, categoria, url }) => {
+salvar : ({id, nome, descricao, preco, quantidade, categoria, url },callback) => {
 //sql com a info desejada
 const sql = `
 INSERT INTO produtos (id, nome, descricao, preco, quantidade, categoria, url)
-VALUES (?, ?, ?, ?,?,?,?)
+VALUES (?,?,?,?,?,?,?)
 `
 //valores q vai usar na consultar
 const valores = [id, nome, descricao, preco, quantidade, categoria, url]
 
 //executar o comando no banco
-conn.query(sql,valores, (erro,resultado) => {
+conn.query(sql,valores,(erro,resultado) => {
 //lidar com erro
 if(erro){
   return callback(erro, null)
 }
 const novoProduto = {id: resultado.insertId, nome, descricao, preco, quantidade, categoria, url}
 
-callback(null, novoProduto)
+callback (null,novoProduto)
 })
 },
 //R = Read

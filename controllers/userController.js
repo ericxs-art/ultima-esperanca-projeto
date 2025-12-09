@@ -141,7 +141,7 @@ module.exports = {
       res.render("usuarios/confirmacaoUsuarios", {
         tipo: "Excluir",
         titulo: "Usuario deletado",
-        deel
+        deletado
       });
     });
   },
